@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <style>
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1B5E20;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            background-color: #03A9F4;
+            color: white;
+            padding: 10px;
+        }
+
+        a:hover {
+            background-color: #01579B;
+        }
+
+        input {
+            width: 98%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        .container {
+            margin: auto;
+            width: 60%;
+            padding-top: 5%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+        function validateLoginForm() {
+
+            var email = document.forms["LoginForm"]["email"];
+            var reg_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if (!reg_email.test(email.value)) {
+                document.getElementById("email_alert").innerHTML = "You must key in a valid email.";
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+    <div class="container">
+        <h1 style="text-align: center;">Login</h1>
+        <p id="login_alert" style="color: red; text-align: center;"></p>
+        <form name="LoginForm" action="login.php" method="post" onsubmit="return validateLoginForm()">
+
+            <label for="email"><b>Email</b></label><br>
+            <input type="text" placeholder="Enter Email" name="email" required><br>
+            <span id="email_alert" style="color: red"></span><br><br>
+
+            <label for="password"><b>Password</b></label><br>
+            <input type="password" placeholder="Enter Password" name="password" required><br><br><br>
+
+            <button type="submit" name="login">Login</button><br><br>
+            <a href="register.html">Register</a>
+
+        </form>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <style>
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1B5E20;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            background-color: #F44336;
+            color: white;
+            padding: 10px;
+        }
+
+        a:hover {
+            background-color: #B71C1C;
+        }
+
+        input {
+            width: 98%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        .container {
+            margin: auto;
+            width: 60%;
+            padding-top: 5%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+        function validateRegisterForm() {
+
+            var email = document.forms["RegisterForm"]["email"];
+            var password = document.forms["RegisterForm"]["password"];
+            var confirmPassword = document.forms["RegisterForm"]["confirmPassword"];
+            var reg_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            document.getElementById("email_alert").innerHTML = "";
+            document.getElementById("confirmPassword_alert").innerHTML = "";
+
+            if (!reg_email.test(email.value)) {
+                document.getElementById("email_alert").innerHTML = "You must key in a valid email.";
+                return false;
+            }
+            else if (password.value != confirmPassword.value) {
+                document.getElementById("confirmPassword_alert").innerHTML = "Password and confirm password should be same.";
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+    <div class="container">
+        <h1 style="text-align: center;">Register</h1><br>
+        <form name="RegisterForm" action="addUser.php" method="post" onsubmit="return validateRegisterForm()">
+
+            <label for="email"><b>Email</b></label><br>
+            <input type="text" placeholder="Enter Email" name="email" required><br>
+            <span id="email_alert" style="color: red"></span><br><br>
+
+            <label for="password"><b>Password</b></label><br>
+            <input type="password" placeholder="Enter Password" name="password" required><br><br><br>
+
+            <label for="password"><b>Confirm Password</b></label><br>
+            <input type="password" placeholder="Enter Confirm Password" name="confirmPassword" required><br>
+            <span id="confirmPassword_alert" style="color: red"></span><br><br><br>
+
+            <button type="submit" name="register">Register</button><br><br>
+            <a href="index.html">Cancel</a>
+        </form>
+    </div>
+</body>
+
+</html>
