@@ -18,11 +18,11 @@
         }
 
         .left {
-            width: 30%;
+            width: 20%;
         }
 
         .right {
-            width: 50%;
+            width: 60%;
         }
 
         .row:after {
@@ -62,7 +62,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            max-width:70%;
+            max-width:80%;
         }
     </style>
     </head>
@@ -86,10 +86,14 @@
         </div>
         <div class="row">
             <div class="column left">
-
+                <p style="font-size:48px; text-align: center;">&#128514;</p>
+                <p style="font-size:48px; text-align: center;">&#128516;</p>
+                <p style="font-size:48px; text-align: center;">&#128525;</p>
+                <p style="font-size:48px; text-align: center;">&#128526;</p>
+                <p style="font-size:48px; text-align: center;">&#128151;</p>
             </div>
             <div class="column right">
-                <img id="uploadImage" src="https://i.stack.imgur.com/y9DpT.jpg" alt="your image" />
+                <img id="uploadImage" src="imagePlaceholder.jpg" alt="your image" />
                 
                 <form>
                     <label for="img" class="custom-file-upload" >Upload an image</label>
