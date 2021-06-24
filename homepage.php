@@ -82,8 +82,8 @@
                 <p id="sticker5" style="font-size:48px; text-align: center;">&#128151;</p>
             </div>
             <div class="column right">
+                <div id="stickers" style="font-size:48px;"></div>
                 <img id="uploadImage" src="imagePlaceholder.jpg" alt="your image" />
-                <div id="stickers" style="font-size:48px; text-align: center;"></div>
                 <form>
                     <label for="img" class="custom-file-upload" >Upload an image</label>
                     <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event);">
@@ -103,6 +103,8 @@
             document.getElementById("sticker1").addEventListener("click", addSticker1);
             function addSticker1(){
                 const sticker = document.createElement("p");
+                sticker.setAttribute("id","stickers1");
+                sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(0x1F602));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
@@ -111,6 +113,8 @@
             document.getElementById("sticker2").addEventListener("click", addSticker2);
             function addSticker2(){
                 const sticker = document.createElement("p");
+                sticker.setAttribute("id","stickers2");
+                sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(0x1F604));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
@@ -119,6 +123,8 @@
             document.getElementById("sticker3").addEventListener("click", addSticker3);
             function addSticker3(){
                 const sticker = document.createElement("p");
+                sticker.setAttribute("id","stickers3");
+                sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(0x1F60D));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
@@ -127,6 +133,8 @@
             document.getElementById("sticker4").addEventListener("click", addSticker4);
             function addSticker4(){
                 const sticker = document.createElement("p");
+                sticker.setAttribute("id","stickers4");
+                sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(0x1F60E));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
@@ -135,6 +143,8 @@
             document.getElementById("sticker5").addEventListener("click", addSticker5);
             function addSticker5(){
                 const sticker = document.createElement("p");
+                sticker.setAttribute("id","stickers5");
+                sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(0x1F497));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
