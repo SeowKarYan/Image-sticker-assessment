@@ -108,7 +108,26 @@
                 const node = document.createTextNode(String.fromCodePoint(0x1F602));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
+
+                var dragValue = sticker;
+                sticker.addEventListener("onmousedown", move);
+                function move(){
+                    dragValue = sticker;
+                }
+
+                document.onmouseup = function(e){
+                    dragValue = null;
+                }
+
+                document.onmousemove = function(e){
+                    var x = e.pageX;
+                    var y = e.pageY;
+
+                    dragValue.style.left = x + "px";
+                    dragValue.style.top = y + "px";
+                }
             }
+            
 
             document.getElementById("sticker2").addEventListener("click", addSticker2);
             function addSticker2(){
@@ -118,6 +137,24 @@
                 const node = document.createTextNode(String.fromCodePoint(0x1F604));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
+
+                var dragValue = sticker;
+                sticker.addEventListener("onmousedown", move);
+                function move(){
+                    dragValue = sticker;
+                }
+
+                document.onmouseup = function(e){
+                    dragValue = null;
+                }
+
+                document.onmousemove = function(e){
+                    var x = e.pageX;
+                    var y = e.pageY;
+
+                    dragValue.style.left = x + "px";
+                    dragValue.style.top = y + "px";
+                }
             }
 
             document.getElementById("sticker3").addEventListener("click", addSticker3);
