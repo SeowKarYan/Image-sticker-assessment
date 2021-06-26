@@ -16,17 +16,37 @@
     <head>
         <title>Register Successful</title>
         <style>
+        body{
+            background-color:#BBDEFB;
+        } 
+
         .container {
             margin: auto;
+            margin-top: 2%;
             width: 60%;
-            padding-top: 5%;
+            padding: 3% 10% 3% 10%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            background-color:white;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+
+        a:hover {
+            background-color: #1B5E20;
         }
     </style>
     </head>
 
     <body>
         <div class="container">
-            <h1 style="text-align: center;">Register successfully!</h1>
+            <h1 style="text-align: center;">Register successfully!</h1><br><br>
             <a href="index.html">Go back to login page.</a>
         </div>
     </body>
