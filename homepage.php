@@ -104,14 +104,18 @@
                 }
             };
 
-            document.getElementById("sticker1").addEventListener("click", addSticker1);
-            function addSticker1(){
+            function addSticker(stickercode) {
                 const sticker = document.createElement("p");
-                sticker.setAttribute("id","stickers1");
+                //sticker.setAttribute("id","stickers1");
                 sticker.style.position = "absolute";
-                const node = document.createTextNode(String.fromCodePoint(0x1F602));
+                const node = document.createTextNode(String.fromCodePoint(stickercode));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
+                return sticker;
+            }
+
+            document.getElementById("sticker1").addEventListener("click", function(){
+                var sticker = addSticker(0x1F602);
 
                 var dragValue = sticker;
              
@@ -129,67 +133,25 @@
                     document.onmouseup = function(e){
                         dragValue = null;
                     }
-
                 }
-            }
+            });
 
-            document.getElementById("sticker2").addEventListener("click", addSticker2);
-            function addSticker2(){
-                const sticker = document.createElement("p");
-                sticker.setAttribute("id","stickers2");
-                sticker.style.position = "absolute";
-                const node = document.createTextNode(String.fromCodePoint(0x1F604));
-                sticker.appendChild(node);
-                document.getElementById("stickers").appendChild(sticker);
-                /*
-                var dragValue = sticker;
-                sticker.addEventListener("onmousedown", move);
-                function move(){
-                    dragValue = sticker;
-                }
+            document.getElementById("sticker2").addEventListener("click", function(){
+                addSticker(0x1F604);
+            });
 
-                document.onmouseup = function(e){
-                    dragValue = null;
-                }
+            document.getElementById("sticker3").addEventListener("click", function(){
+                addSticker(0x1F60D);
+            });
 
-                document.onmousemove = function(e){
-                    var x = e.pageX;
-                    var y = e.pageY;
+            document.getElementById("sticker4").addEventListener("click", function(){
+                addSticker(0x1F60E);
+            });
 
-                    dragValue.style.left = x + "px";
-                    dragValue.style.top = y + "px";
-                }*/
-            }
+            document.getElementById("sticker5").addEventListener("click", function(){
+                addSticker(0x1F497);
+            });
 
-            document.getElementById("sticker3").addEventListener("click", addSticker3);
-            function addSticker3(){
-                const sticker = document.createElement("p");
-                sticker.setAttribute("id","stickers3");
-                sticker.style.position = "absolute";
-                const node = document.createTextNode(String.fromCodePoint(0x1F60D));
-                sticker.appendChild(node);
-                document.getElementById("stickers").appendChild(sticker);
-            }
-
-            document.getElementById("sticker4").addEventListener("click", addSticker4);
-            function addSticker4(){
-                const sticker = document.createElement("p");
-                sticker.setAttribute("id","stickers4");
-                sticker.style.position = "absolute";
-                const node = document.createTextNode(String.fromCodePoint(0x1F60E));
-                sticker.appendChild(node);
-                document.getElementById("stickers").appendChild(sticker);
-            }
-
-            document.getElementById("sticker5").addEventListener("click", addSticker5);
-            function addSticker5(){
-                const sticker = document.createElement("p");
-                sticker.setAttribute("id","stickers5");
-                sticker.style.position = "absolute";
-                const node = document.createTextNode(String.fromCodePoint(0x1F497));
-                sticker.appendChild(node);
-                document.getElementById("stickers").appendChild(sticker);
-            }
         </script>
     </body>
 </html>
