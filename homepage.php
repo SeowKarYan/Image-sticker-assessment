@@ -107,73 +107,49 @@
             var stickerId = 1;
 
             function addSticker(stickercode) {
-                const sticker = document.createElement("p");
+                var sticker = document.createElement("p");
                 sticker.setAttribute("id",stickerId);
+                sticker.onmousedown = function() {
+                    var dragValue = sticker;
+
+                        document.onmousemove = function(e){
+                            var x = e.pageX;
+                            var y = e.pageY;
+
+                            dragValue.style.left = x + "px";
+                            dragValue.style.top = y + "px";
+                        }
+
+                        document.onmouseup = function(e){
+                            dragValue = null;
+                        }
+                    
+                }
                 sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(stickercode));
                 sticker.appendChild(node);
                 document.getElementById("stickers").appendChild(sticker);
                 stickerId ++;
-
-                return sticker;
             }
 
             document.getElementById("sticker1").addEventListener("click", function(){
-                var sticker = addSticker(0x1F602);
-
-                var dragValue = sticker;
-             
-                document.onmousedown = function(e){
-                    dragValue = sticker;
-
-                    document.onmousemove = function(e){
-                        var x = e.pageX;
-                        var y = e.pageY;
-
-                        dragValue.style.left = x + "px";
-                        dragValue.style.top = y + "px";
-                    }
-
-                    document.onmouseup = function(e){
-                        dragValue = null;
-                    }
-                }
+                addSticker(0x1F602);
             });
 
-            
-
             document.getElementById("sticker2").addEventListener("click", function(){
-                var sticker = addSticker(0x1F604);
-
-                var dragValue = sticker;
-             
-                document.onmousedown = function(e){
-                    dragValue = sticker;
-
-                    document.onmousemove = function(e){
-                        var x = e.pageX;
-                        var y = e.pageY;
-
-                        dragValue.style.left = x + "px";
-                        dragValue.style.top = y + "px";
-                    }
-
-                    document.onmouseup = function(e){
-                        dragValue = null;
-                    }
-                }
+                addSticker(0x1F604);
             });
 
             document.getElementById("sticker3").addEventListener("click", function(){
-                var sticker = addSticker(0x1F60D);
+                addSticker(0x1F60D);
             });
 
             document.getElementById("sticker4").addEventListener("click", function(){
-                var sticker = addSticker(0x1F60E);
+                addSticker(0x1F60E);
             });
 
             document.getElementById("sticker5").addEventListener("click", function(){
-                var sticker = addSticker(0x1F497);
+                addSticker(0x1F497);
             });
 
         </script>
