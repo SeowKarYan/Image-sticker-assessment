@@ -10,19 +10,21 @@
 
         body{
             position: relative;
+            background-color:#E3F2FD;
         }
 
         .column{
-            margin-top: 5%;
+            margin-top: 3%;
             margin-left:3%;
-            border: 1px solid grey;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             padding-top: 5%;
             padding-bottom: 5%;
             float: left;
+            background-color:white;
         }
 
         .left {
-            width: 20%;
+            width: 15%;
         }
 
         .right {
@@ -125,7 +127,7 @@
                             dragValue = null;
                         }
                 }
-                
+
                 sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(stickercode));
                 sticker.appendChild(node);

@@ -17,7 +17,7 @@
         <title>Register Successful</title>
         <style>
         body{
-            background-color:#BBDEFB;
+            background-color:#E3F2FD;
         } 
 
         .container {
