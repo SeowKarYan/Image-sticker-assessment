@@ -121,10 +121,11 @@
                         }
 
                         document.onmouseup = function(e){
+                            document.onmousemove = null;
                             dragValue = null;
                         }
-                    
                 }
+                
                 sticker.style.position = "absolute";
                 const node = document.createTextNode(String.fromCodePoint(stickercode));
                 sticker.appendChild(node);
