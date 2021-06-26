@@ -58,16 +58,22 @@
             var reg_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
             document.getElementById("email_alert").innerHTML = "";
+            document.getElementById("password_alert").innerHTML = "";
             document.getElementById("confirmPassword_alert").innerHTML = "";
 
             if (!reg_email.test(email.value)) {
                 document.getElementById("email_alert").innerHTML = "You must key in a valid email.";
                 return false;
             }
+            else if (password.value.length < 6) {
+                document.getElementById("password_alert").innerHTML = "Password should be at least 6 characters.";
+                return false;
+            }
             else if (password.value != confirmPassword.value) {
                 document.getElementById("confirmPassword_alert").innerHTML = "Password and confirm password should be same.";
                 return false;
             }
+            
 
             return true;
         }
@@ -83,7 +89,8 @@
             <span id="email_alert" style="color: red"></span><br><br>
 
             <label for="password"><b>Password</b></label><br>
-            <input type="password" placeholder="Enter Password" name="password" required><br><br><br>
+            <input type="password" placeholder="Enter Password (at least 6 characters)" name="password" required><br>
+            <span id="password_alert" style="color: red"></span><br><br><br>
 
             <label for="password"><b>Confirm Password</b></label><br>
             <input type="password" placeholder="Enter Confirm Password" name="confirmPassword" required><br>
