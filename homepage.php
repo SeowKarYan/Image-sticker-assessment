@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Homepage</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
 
         * {
@@ -28,7 +29,7 @@
         }
 
         .right {
-            width: 60%;
+            width: 70%;
         }
 
         .row:after {
@@ -45,7 +46,7 @@
 
         li {
             float: right;
-            padding: 8px;
+            padding: 10px;
         }
 
         a {
@@ -70,6 +71,51 @@
             margin-right: auto;
             max-width:80%;
         }
+
+        .share{
+            padding: 5% 5% 5% 5%;
+        }
+
+        .fa {
+            padding-top: 10px;
+            padding-bottom: 7px;
+            font-size: 40px;
+            width: 60px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 5%;
+            border-radius: 50%;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .fa-pinterest {
+            background: #cb2027;
+            color: white;
+        }
+
+        .fa-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
     </style>
     </head>
 
@@ -80,6 +126,7 @@
             </ul>
         </div>
         <div class="row">
+            <h1 style="padding-top: 30px; text-align: center;">Upload an image and add the sticker to design your image</h1>
             <div class="column left">
                 <p id="sticker1" style="font-size:48px; text-align: center;">&#128514;</p>
                 <p id="sticker2" style="font-size:48px; text-align: center;">&#128516;</p>
@@ -95,6 +142,14 @@
                     <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event);">
                 </form>
             </div>
+        </div>
+        <div class="share">
+            <h2>Share image to your social media:</h2>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+            <a href="#" class="fa fa-whatsapp"></a>
         </div>
 
         <script>
