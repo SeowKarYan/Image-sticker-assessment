@@ -96,23 +96,18 @@
             color: white;
         }
 
+        .fa-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
         .fa-twitter {
             background: #55ACEE;
             color: white;
         }
 
-        .fa-linkedin {
-            background: #007bb5;
-            color: white;
-        }
-
         .fa-pinterest {
             background: #cb2027;
-            color: white;
-        }
-
-        .fa-whatsapp {
-            background: #25D366;
             color: white;
         }
 
@@ -136,7 +131,7 @@
             </div>
             <div class="column right">
                 <div id="stickers" style="font-size:48px;"></div>
-                <img id="uploadImage" src="imagePlaceholder.jpg" alt="your image" />
+                <img class="imageSharing" id="uploadImage" src="imagePlaceholder.jpg" alt="your image" />
                 <form>
                     <label for="img" class="custom-file-upload" >Upload an image</label>
                     <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event);">
@@ -144,12 +139,11 @@
             </div>
         </div>
         <div class="share">
-            <h2>Share image to your social media:</h2>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-linkedin"></a>
-            <a href="#" class="fa fa-pinterest"></a>
-            <a href="#" class="fa fa-whatsapp"></a>
+            <h2>Share to your social media:</h2>
+            <a class="facebook-btn"><i class="fa fa-facebook"></i></a>
+            <a class="whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
+            <a class="twitter-btn"><i class="fa fa-twitter"></i></a>
+            <a class="pinterest-btn"><i class="fa fa-pinterest"></i></a>
         </div>
 
         <script>
@@ -209,6 +203,24 @@
             document.getElementById("sticker5").addEventListener("click", function(){
                 addSticker(0x1F497);
             });
+
+            const facebookBtn = document.querySelector(".facebook-btn");
+            const whatsappBtn = document.querySelector(".whatsapp-btn");
+            const twitterBtn = document.querySelector(".twitter-btn");
+            const pinterestBtn = document.querySelector(".pinterest-btn");
+        
+            function socialMediaShare(){ 
+                let postUrl = encodeURI("http://127.0.0.1/assessment/homepage.php");
+                let postTitle = encodeURI("");
+                let image = encodeURI(document.querySelector(".imageSharing").src);
+
+                facebookBtn.setAttribute("href",`https://www.facebook.com/sharer.php?u=${postUrl}`);
+                whatsappBtn.setAttribute("href",`https://api.whatsapp.com/send?text=${postTitle} ${postUrl}`);
+                twitterBtn.setAttribute("href",`https://twitter.com/share?url=${postUrl}&text=${postTitle}`);
+                pinterestBtn.setAttribute("href",`https://pinterest.com/pin/create/bookmarklet/?media=${image}&url=${postUrl}&description=${postTitle}`);
+            }
+
+            socialMediaShare();
 
         </script>
     </body>
