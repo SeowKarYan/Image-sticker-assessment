@@ -57,17 +57,6 @@ session_start();
             text-decoration: none;
         }
 
-        input[type="file"] {
-            display: none;
-        }
-
-        .custom-file-upload {
-            border: 1px solid grey;
-            padding: 6px 12px;
-            cursor: pointer;
-            margin-left: 40%;
-        }
-
         #uploadImage{
             padding-bottom: 3%;
             display: block;
@@ -115,6 +104,21 @@ session_start();
             color: white;
         }
 
+        button {
+            width: 90%;
+            padding: 10px;
+            margin-left:5%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1B5E20;
+        }
+
     </style>
     </head>
 
@@ -135,7 +139,7 @@ session_start();
             </div>
             <div class="column right">
                 <div id="stickers" style="font-size:48px;">
-                    <img class="imageSharing" id="uploadImage" src="images/<?php echo $_SESSION["image"]; ?>" alt="your image" />
+                    <img class="imageSharing" id="uploadImage" src="images/<?php echo $_SESSION["image"]; ?>" alt="your image" /> 
                 </div>
                 <button onclick="screenshot()">Done</button>
             </div>
@@ -216,6 +220,7 @@ session_start();
 
             function screenshot(){
                 html2canvas(document.getElementById('stickers')).then(function(canvas){
+                    canvas.setAttribute("id","designedImage");
                     document.body.appendChild(canvas)
                 })
             }
