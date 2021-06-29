@@ -130,8 +130,9 @@
                 <p id="sticker5" style="font-size:48px; text-align: center;">&#128151;</p>
             </div>
             <div class="column right">
-                <div id="stickers" style="font-size:48px;"></div>
-                <img class="imageSharing" id="uploadImage" src="imagePlaceholder.jpg" alt="your image" />
+                <div id="stickers" style="font-size:48px;">
+                    <img class="imageSharing" id="uploadImage" src="imagePlaceholder.jpg" alt="your image" />
+                </div> 
                 <form>
                     <label for="img" class="custom-file-upload" >Upload an image</label>
                     <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event);">
