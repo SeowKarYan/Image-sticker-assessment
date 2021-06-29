@@ -140,10 +140,10 @@
         </div>
         <div class="share">
             <h2>Share to your social media:</h2>
-            <a class="facebook-btn"><i class="fa fa-facebook"></i></a>
-            <a class="whatsapp-btn"><i class="fa fa-whatsapp"></i></a>
-            <a class="twitter-btn"><i class="fa fa-twitter"></i></a>
-            <a class="pinterest-btn"><i class="fa fa-pinterest"></i></a>
+            <a class="facebook-btn" onclick="socialMediaShare()"><i class="fa fa-facebook"></i></a>
+            <a class="whatsapp-btn" onclick="socialMediaShare()"><i class="fa fa-whatsapp"></i></a>
+            <a class="twitter-btn" onclick="socialMediaShare()"><i class="fa fa-twitter"></i></a>
+            <a class="pinterest-btn" onclick="socialMediaShare()"><i class="fa fa-pinterest"></i></a>
         </div>
 
         <script>
@@ -219,8 +219,6 @@
                 twitterBtn.setAttribute("href",`https://twitter.com/share?url=${postUrl}&text=${postTitle}`);
                 pinterestBtn.setAttribute("href",`https://pinterest.com/pin/create/bookmarklet/?media=${image}&url=${postUrl}&description=${postTitle}`);
             }
-
-            socialMediaShare();
 
         </script>
     </body>
