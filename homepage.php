@@ -1,7 +1,11 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Homepage</title>
+        <title>Edit Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
 
@@ -121,7 +125,7 @@
             </ul>
         </div>
         <div class="row">
-            <h1 style="padding-top: 30px; text-align: center;">Upload an image and add the sticker to design your image</h1>
+            <h1 style="padding-top: 30px; text-align: center;">Add the sticker into the image</h1>
             <div class="column left">
                 <p id="sticker1" style="font-size:48px; text-align: center;">&#128514;</p>
                 <p id="sticker2" style="font-size:48px; text-align: center;">&#128516;</p>
@@ -131,12 +135,9 @@
             </div>
             <div class="column right">
                 <div id="stickers" style="font-size:48px;">
-                    <img class="imageSharing" id="uploadImage" src="imagePlaceholder.jpg" alt="your image" />
-                </div> 
-                <form>
-                    <label for="img" class="custom-file-upload" >Upload an image</label>
-                    <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event);">
-                </form>
+                    <img class="imageSharing" id="uploadImage" src="images/<?php echo $_SESSION["image"]; ?>" alt="your image" />
+                </div>
+                <button onclick="screenshot()">Done</button>
             </div>
         </div>
         <div class="share">
@@ -146,16 +147,8 @@
             <a class="twitter-btn" onclick="socialMediaShare()"><i class="fa fa-twitter"></i></a>
             <a class="pinterest-btn" onclick="socialMediaShare()"><i class="fa fa-pinterest"></i></a>
         </div>
-
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
         <script>
-            var loadFile = function(event) {
-                var uploadImage = document.getElementById('uploadImage');
-                uploadImage.src = URL.createObjectURL(event.target.files[0]);
-                uploadImage.onload = function() {
-                URL.revokeObjectURL(uploadImage.src)
-                }
-            };
-
             var stickerId = 1;
 
             function addSticker(stickercode) {
@@ -219,6 +212,12 @@
                 whatsappBtn.setAttribute("href",`https://api.whatsapp.com/send?text=${postTitle} ${postUrl}`);
                 twitterBtn.setAttribute("href",`https://twitter.com/share?url=${postUrl}&text=${postTitle}`);
                 pinterestBtn.setAttribute("href",`https://pinterest.com/pin/create/bookmarklet/?media=${image}&url=${postUrl}&description=${postTitle}`);
+            }
+
+            function screenshot(){
+                html2canvas(document.getElementById('stickers')).then(function(canvas){
+                    document.body.appendChild(canvas)
+                })
             }
 
         </script>

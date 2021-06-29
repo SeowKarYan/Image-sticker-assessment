@@ -14,7 +14,7 @@ if(isset($_POST['login'])) {
     mysqli_free_result($result);
 
     if($rowcount == 1) {
-        header("Location:homepage.php");
+        header("Location:uploadPage.php");
     }
     else {
         header("Location:login.php?message=loginfail");
