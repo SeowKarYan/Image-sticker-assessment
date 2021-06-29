@@ -40,7 +40,7 @@
             border: 1px solid grey;
             padding: 6px 12px;
             cursor: pointer;
-            margin-left: 40%;
+            margin-left: 42%;
         }
 
         #uploadImage{
