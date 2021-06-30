@@ -180,18 +180,19 @@ session_start();
                 <button id="done">Done</button>
             </div>
         </div>
-        <div class="share">
-            <h2>Share to your social media:</h2>
-            <a class="facebook-btn" onclick="socialMediaShare()"><i class="fa fa-facebook"></i></a>
-            <a class="whatsapp-btn" onclick="socialMediaShare()"><i class="fa fa-whatsapp"></i></a>
-            <a class="twitter-btn" onclick="socialMediaShare()"><i class="fa fa-twitter"></i></a>
-            <a class="pinterest-btn" onclick="socialMediaShare()"><i class="fa fa-pinterest"></i></a>
-        </div>
 
         <div id="myModal" class="modal">
             <div class="modal-content" id="modalContent">
                 <span class="close">&times;</span>
-                <p style="text-align: center;">Right click on the image to save it.</p>
+                <h2 style="text-align: center;">Your Image:</h2>
+                <img style="max-width:100%;" class="fImage" id="finishImage" src="" alt="" />
+                <div class="share">
+                    <h2>Share to your social media:</h2>
+                    <a class="facebook-btn" onclick="socialMediaShare()"><i class="fa fa-facebook"></i></a>
+                    <a class="whatsapp-btn" onclick="socialMediaShare()"><i class="fa fa-whatsapp"></i></a>
+                    <a class="twitter-btn" onclick="socialMediaShare()"><i class="fa fa-twitter"></i></a>
+                    <a class="pinterest-btn" onclick="socialMediaShare()"><i class="fa fa-pinterest"></i></a>
+                </div>
             </div>
         </div>
 
@@ -265,7 +266,12 @@ session_start();
             function screenshot(){
                 html2canvas(document.getElementById('stickers')).then(function(canvas){
                     canvas.setAttribute("id","designedImage");
-                    document.getElementById("modalContent").appendChild(canvas);
+                    //document.getElementById("modalContent").appendChild(canvas);
+
+                    const finishImage = document.getElementById('finishImage');
+                    const ctx = canvas.getContext("2d");
+                    const dataURI = canvas.toDataURL();
+                    finishImage.src = dataURI;
                 })
             }
 
